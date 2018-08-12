@@ -8,8 +8,6 @@ Tableau Public dashboard available [here](https://public.tableau.com/profile/gre
 
 This repo demonstrates how I used Python code within Tableau to build an interactive dashboard implementing a time-series forecast. If you just want to play around with the dashboard first and explore the SARIMAX algorithm, download the full python-implemented dashboard [here](sarimax.twbx) or go to this slightly dumbed-down version on [Tableau Public](https://public.tableau.com/profile/greg4084#!/vizhome/sarimaxmodel/SARIMAXdashboard) (Tableau Public wisely but disappointingly disallows external scripts to be uploaded, so I had to fake the Python scripts with hard-coded data sets).
 
-<center><iframe src="https://public.tableau.com/views/sarimaxmodel/SARIMAXdashboard?:embed=y&:display_count=yes" width="1366" height="795" frameborder="0"></iframe></center>
-
 ![seasons](images/seasons7.jpg)
 
 ### TabPy: Because when you can’t think of a good name, try a portmanteau
@@ -181,9 +179,7 @@ Now, drag *Forecast date* to the columns shelf, and *Number of Passengers* and *
 
 This is what the final dashboard should look like:
 ![sarimax(4,1,2)x(0,2,2,12).png](images/sarimax(4,1,2)x(0,2,2,12).png)
-You’ll have some formatting tasks to take care of if you want it to look identical to mine, or alternately you could just download my dashboard [here](https://github.com/raffg/air-passengers-arima/blob/master/sarimax.twbx) and be done with it. Tableau Public won’t allow any external scripts to be uploaded so sadly that means I can’t share this exact version as shown below. Instead, I just ran through a couple hundred permutations of the SARIMAX parameters and saved each forecast to a csv, and that version, though not as pretty or as programmatically cool, can be toyed with directly on Tableau Public [here](https://public.tableau.com/profile/greg4084#!/vizhome/sarimaxmodel/SARIMAXdashboard):
-
-<center><iframe src="https://public.tableau.com/views/sarimaxmodel/SARIMAXdashboard?:embed=y&:display_count=yes" width="1366" height="795" frameborder="0"></iframe></center>
+You’ll have some formatting tasks to take care of if you want it to look identical to mine, or alternately you could just download my dashboard [here](https://github.com/raffg/air-passengers-arima/blob/master/sarimax.twbx) and be done with it. Tableau Public won’t allow any external scripts to be uploaded so sadly that means I can’t share this exact version as shown below. Instead, I just ran through a couple hundred permutations of the SARIMAX parameters and saved each forecast to a csv, and that version, though not as pretty or as programmatically cool, can be toyed with directly on Tableau Public [here](https://public.tableau.com/profile/greg4084#!/vizhome/sarimaxmodel/SARIMAXdashboard).
 
 
 As you can see, the model is pretty good! That’s the power of SARIMAX: it accurately models the general increasing trend over time, the up-and-down of the seasons throughout the year, and even the increasing variance of data (the increasing distance between the highs of the peaks and the lows of the troughs) as time goes by. You do need to be careful picking your parameters, some pretty interesting stuff can happen if you’re not. My worst performing model for instance, is this (look at that error magnitude!):

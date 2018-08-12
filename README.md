@@ -70,10 +70,7 @@ OK, finally! On to the Python. Let’s create our first script. Create a calcula
 ```python
 SCRIPT_REAL(
 '
-import warnings
-import itertools
 import pandas as pd
-import numpy as np
 import statsmodels.api as sm
 
 dates = _arg1
@@ -123,10 +120,7 @@ We’ll also create a calculated field called Mean Squared Error, so that we can
 ```python
 SCRIPT_REAL(
 '
-import warnings
-import itertools
 import pandas as pd
-import numpy as np
 import statsmodels.api as sm
 
 dates = _arg1

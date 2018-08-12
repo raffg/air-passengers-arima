@@ -169,7 +169,9 @@ MIN([Period]))
 
 Now, drag *Forecast date* to the columns shelf, and *Number of Passengers* and *Forecast* to the rows shelf. Make it a dual-axis chart and synchronize the axes. Put *Past vs Future* on the color mark of the *Forecast* card and you’re done! That was easy, wasn’t it? (Nope, it actually wasn’t. It took me an embarrassingly long amount of time to figure out how to make those scripts work and Tableau’s supremely unhelpful habit of not showing where errors are occurring makes trouble-shooting an exercise in frustration). To spice things up a bit, add those parameters to the side bar so you can change them interactively. Oh! And I almost forgot about that snazzy title. Right click on the title and type in this code:
 
-![Title](images/title.png)
+```
+SARIMAX(<Parameters.AR (Time Lag)>, <Parameters.I (Seasonal Difference)>, <Parameters.MA (Moving Average)>) x (<Parameters.Seasonal AR (Time Lag)>, <Parameters.Seasonal I (Seasonal Difference)>, <Parameters.Seasonal MA (Moving Average)>, <Parameters.Period>), Mean Squared Error=<AGG(Mean Squared Error)>
+```
 
 This is what the final dashboard should look like:
 ![sarimax(4,1,2)x(0,2,2,12).png](images/sarimax(4,1,2)x(0,2,2,12).png)

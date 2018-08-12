@@ -7,6 +7,7 @@ Tableau Public dashboard available [here](https://public.tableau.com/profile/gre
 
 
 This repo demonstrates how I used Python code within Tableau to build an interactive dashboard implementing a time-series forecast. If you just want to play around with the dashboard first and explore the SARIMAX algorithm, download the full python-implemented dashboard [here](sarimax.twbx) or go to this slightly dumbed-down version on [Tableau Public](https://public.tableau.com/profile/greg4084#!/vizhome/sarimaxmodel/SARIMAXdashboard) (Tableau Public wisely but disappointingly disallows external scripts to be uploaded, so I had to fake the Python scripts with hard-coded data sets).
+
 <center><iframe src="https://public.tableau.com/views/sarimaxmodel/SARIMAXdashboard?:embed=y&:display_count=yes" width="1366" height="795" frameborder="0"></iframe></center>
 
 ![seasons](images/seasons7.jpg)
@@ -23,7 +24,6 @@ Go to Help --> Settings and Performance --> Manage External Service Connection�
 Enter the Server (localhost if running TabPy on the same computer) and the Port (default is 9004).
 
 ![External Service Connection](images/tabpy.png)
-And you’re off to the races!
 
 If you’ve had any trouble so far, try [this tutorial](https://community.tableau.com/message/618129#618129).
 
@@ -185,5 +185,7 @@ You’ll have some formatting tasks to take care of if you want it to look ident
 
 <center><iframe src="https://public.tableau.com/views/sarimaxmodel/SARIMAXdashboard?:embed=y&:display_count=yes" width="1366" height="795" frameborder="0"></iframe></center>
 
+
 As you can see, the model is pretty good! That’s the power of SARIMAX: it accurately models the general increasing trend over time, the up-and-down of the seasons throughout the year, and even the increasing variance of data (the increasing distance between the highs of the peaks and the lows of the troughs) as time goes by. You do need to be careful picking your parameters, some pretty interesting stuff can happen if you’re not. My worst performing model for instance, is this (look at that error magnitude!):
+
 ![sarimax(1,0,4)x(4,0,3,12).png](images/sarimax(1,0,4)x(4,0,3,12).png)

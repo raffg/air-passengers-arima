@@ -174,7 +174,7 @@ SARIMAX(<Parameters.AR (Time Lag)>, <Parameters.I (Seasonal Difference)>, <Param
 ```
 
 This is what the final dashboard should look like:
-![sarimax(4,1,2)x(0,2,2,12).png](images/sarimax(4,1,2)x(0,2,2,12).png)
+![sarimax(4,1,2)x(0,2,2,12).png](images/model.png)
 You’ll have some formatting tasks to take care of if you want it to look identical to mine, or alternately you could just download my dashboard [here](https://github.com/raffg/air-passengers-arima/blob/master/sarimax.twbx) and be done with it. Tableau Public won’t allow any external scripts to be uploaded so sadly that means I can’t share this exact version as shown below. Instead, I just ran through a couple hundred permutations of the SARIMAX parameters and saved each forecast to a csv, and that version, though not as pretty or as programmatically cool, can be toyed with directly on Tableau Public [here](https://public.tableau.com/profile/greg4084#!/vizhome/sarimaxmodel/SARIMAXdashboard).
 
 
